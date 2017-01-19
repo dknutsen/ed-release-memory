@@ -1,0 +1,23 @@
+<div style="width:400px; height:200px; border: 1px solid;">
+  <button style="width:100%; height:30px" {{action 'loadRecords'}}>Load Records</button>
+  <ul>
+    <li>Items: {{content.items.length}}</li>
+    <li>Groups: {{content.groups.length}}</li>
+    <li>Subgroups: {{content.subgroups.length}}</li>
+    <li>Pricedata: {{content.pricedata.length}}</li>
+  </ul>
+</div>
+
+<div style="width:400px; ">
+  <div style="width:100%;">
+    <button style="width:100%; height:30px" {{action 'unloadRecords'}}>Unload All Records</button>
+  </div>
+  <div>
+    <button style="width:49%; height:30px" {{action 'unloadItems'}}>Unload Item Records</button>
+    <button style="width:49%; height:30px" {{action 'unloadPricedata'}}>Unload Pricedata Records</button>
+    <button style="width:49%; height:30px" {{action 'unloadGroups'}}>Unload Group Records</button>
+    <button style="width:49%; height:30px" {{action 'unloadSubgroups'}}>Unload Subgroup Records</button>
+  </div>
+</div>
+
+{{outlet}}
