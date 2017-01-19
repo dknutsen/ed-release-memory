@@ -34,6 +34,17 @@ export default Ember.Route.extend({
     unloadPricedata: function(){
       this.store.unloadAll('pricedatum');
     },
+
+    severAndUnload: function(){
+      this.store.peekAll('item').forEach(function(item){
+        item.set('subgroup', null);
+        item.save();
+      });
+      Ember.run.later(this, function(){
+        this.store.unloadAll('pricedatum');
+        this.store.unloadAll('item');
+      }, 1500);
+    },
   }
 });
 
